@@ -165,8 +165,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 6. Process Section Sticky Active Step Observer
-  const processCards = document.querySelectorAll('.vertical-step-card');
-  const processIndicators = document.querySelectorAll('.proc-ind-item');
+  const processCards = document.querySelectorAll('#process [data-step-card]');
+  const processIndicators = document.querySelectorAll('#process [data-step]');
   if (processCards.length > 0 && processIndicators.length > 0) {
     window.addEventListener('scroll', () => {
       const windowCenter = window.innerHeight / 2;
@@ -187,11 +187,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+
+    // Indicator Click to Scroll
+    processIndicators.forEach(ind => {
+      ind.addEventListener('click', () => {
+        const step = ind.getAttribute('data-step');
+        const targetCard = document.querySelector(`#process [data-step-card="${step}"]`);
+        if (targetCard) {
+          targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    });
   }
 
   // 7. Marketing Section Sticky Active Step Observer
-  const mktCards = document.querySelectorAll('[data-mkt-card]');
-  const mktIndicators = document.querySelectorAll('[data-mkt-step]');
+  const mktCards = document.querySelectorAll('#marketing [data-mkt-card]');
+  const mktIndicators = document.querySelectorAll('#marketing [data-mkt-step]');
   if (mktCards.length > 0 && mktIndicators.length > 0) {
     window.addEventListener('scroll', () => {
       const windowCenter = window.innerHeight / 2;
@@ -209,6 +220,17 @@ document.addEventListener('DOMContentLoaded', () => {
           ind.classList.add('active');
         } else {
           ind.classList.remove('active');
+        }
+      });
+    });
+
+    // Indicator Click to Scroll
+    mktIndicators.forEach(ind => {
+      ind.addEventListener('click', () => {
+        const step = ind.getAttribute('data-mkt-step');
+        const targetCard = document.querySelector(`#marketing [data-mkt-card="${step}"]`);
+        if (targetCard) {
+          targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
       });
     });
