@@ -6296,8 +6296,8 @@ body {
    MOBILE PERFORMANCE & CORE WEB VITALS OPTIMIZATIONS
    ========================================================================== */
 html, body {
-  overflow-x: hidden !important;
-  max-width: 100vw !important;
+  overflow-x: clip !important;
+  max-width: 100vw;
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent;
 }
@@ -6310,11 +6310,10 @@ html, body {
   transform: translateZ(0);
 }
 
-/* Rendering performance boost for heavy sections */
+/* Rendering performance boost for heavy non-sticky sections */
 #portfolio,
 #before-after,
 #testimonials,
-#process,
 #ideal-fit,
 #pricing,
 #faq {
