@@ -431,7 +431,7 @@ body {
   font-family: 'Geist Mono', monospace;
   font-size: 11px;
   font-weight: 800;
-  color: #a8ff35;
+  color: #0f1115;
   letter-spacing: 0.5px;
 }
 
@@ -1626,7 +1626,8 @@ body {
   background-color: transparent !important;
   border: none !important;
   box-shadow: none !important;
-  padding: 40px 0 !important;
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
 }
 
 .info-header {
@@ -6321,12 +6322,16 @@ html, body {
 }
 
 /* Mobile Touch Target & Spacing Adjustments */
+/* -------------------------------------------------------------
+   Comprehensive Mobile & Tablet Responsive Design (Readability & Layout Tuning)
+------------------------------------------------------------- */
 @media (max-width: 768px) {
   body {
-    padding-bottom: 70px !important; /* Prevents sticky bottom bar overlap */
+    padding: 10px 8px 75px 8px !important; /* Touch-friendly outer padding & bottom space for sticky bar */
+    gap: 12px !important;
   }
 
-  /* Min 44px touch targets for mobile accessibility */
+  /* Accessible Touch Targets */
   button,
   .ultra-nav-link,
   .price-cta,
@@ -6340,40 +6345,252 @@ html, body {
     justify-content: center;
   }
 
-  /* Padding and Font scaling for small screens (320px - 430px) */
+  /* 1. Hero Section Adjustments */
   .hero-single-column-mesh {
-    padding: 30px 16px 50px 16px !important;
+    min-height: auto !important;
+    padding: 16px 14px 28px 14px !important;
+    border-radius: 24px !important;
   }
 
-  .info-section-card {
-    padding: 36px 18px !important;
+  .ultra-navbar {
+    padding: 8px 10px !important;
+  }
+
+  .ultra-brand-logo .logo-text {
+    font-size: 20px !important;
+  }
+
+  .ultra-nav-menu {
+    display: none !important; /* Hide desktop horizontal menu on mobile */
+  }
+
+  .ultra-nav-cta {
+    padding: 8px 14px !important;
+    font-size: 12.5px !important;
+    min-height: 40px;
+  }
+
+  .hero-center-column {
+    margin: 12px auto 0 auto !important;
+    padding: 10px 0 20px 0 !important;
+    width: 100% !important;
+  }
+
+  .hero-status-pill {
+    margin-bottom: 14px !important;
+    padding: 5px 12px !important;
+  }
+
+  .status-text {
+    font-size: 10px !important;
+    letter-spacing: 0.3px !important;
+  }
+
+  .mesh-hero-headline {
+    font-size: clamp(26px, 7.2vw, 34px) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -1px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .mesh-hero-subtext {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+    color: #475569 !important;
+    margin-bottom: 22px !important;
+    text-align: center !important;
+  }
+
+  .mesh-actions-stack {
+    width: 100% !important;
+    align-items: center !important;
+    margin-bottom: 22px !important;
+  }
+
+  .mesh-primary-btn {
+    width: 100% !important;
+    max-width: 340px !important;
+    justify-content: center !important;
+    font-size: 14px !important;
+    padding: 13px 20px !important;
+  }
+
+  .mesh-micro-trust {
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+  }
+
+  .mesh-social-proof {
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding: 12px 14px !important;
     border-radius: 20px !important;
+    width: 100% !important;
+    max-width: 340px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
   }
 
-  .info-title {
+  .mesh-social-proof .proof-sub {
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* 2. Global Section & Card Scaling */
+  .info-section-card,
+  .plain-section {
+    padding: 28px 16px !important;
+    border-radius: 20px !important;
+    gap: 24px !important;
+    margin-bottom: 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .section-badge {
+    font-size: 11px !important;
+    padding: 5px 12px !important;
+    letter-spacing: 0.5px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .info-title,
+  .mesh-main-headline,
+  .section-title {
+    font-size: clamp(22px, 5.5vw, 28px) !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.5px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .info-subtitle {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+    color: #475569 !important;
+  }
+
+  /* 3. Grid Systems to Single Column */
+  .stats-grid,
+  .marketing-bento-grid,
+  .pricing-grid,
+  .portfolio-grid,
+  .before-after-grid,
+  .ideal-fit-grid,
+  .ai-capabilities-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  .bento-large,
+  .bento-small,
+  .bento-card,
+  .stat-card,
+  .price-card,
+  .vertical-step-card,
+  .portfolio-item-card,
+  .ba-card,
+  .fit-card,
+  .ai-cap-card {
+    grid-column: span 1 !important;
+    padding: 20px 16px !important;
+    border-radius: 18px !important;
+    min-height: auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .dashed-card,
+  .solid-gray-card {
+    padding: 16px !important;
+    border-radius: 16px !important;
+  }
+
+  .stat-card-split-col {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .card-large-text,
+  .bold-highlight-large {
+    font-size: 32px !important;
+  }
+
+  /* 4. Pricing Section Edge-to-Edge Adjustments */
+  #pricing {
+    margin: -16px -8px 16px -8px !important;
+    border-radius: 32px 32px 0 0 !important;
+    padding: 50px 0 40px 0 !important;
+  }
+
+  #pricing > * {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* 5. Sticky Process & Timeline */
+  .plain-section.process-sticky-section {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .process-sticky-container {
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+  }
+
+  /* 6. Footer Conversion Block */
+  .footer-conversion-area {
+    padding: 40px 16px 40px 16px !important;
+    gap: 20px !important;
+  }
+
+  .footer-title {
     font-size: 24px !important;
     line-height: 1.25 !important;
   }
 
-  .mesh-main-headline {
-    font-size: 30px !important;
-    line-height: 1.18 !important;
-  }
-
-  .pricing-grid {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-  }
-
-  .price-card {
-    padding: 28px 20px !important;
-  }
-
-  .ultra-navbar {
-    padding: 10px 14px !important;
-  }
-
-  .ultra-nav-menu {
-    display: none !important; /* Hide desktop nav links on small mobile screens */
+  /* 7. Modal Dialogs */
+  .booking-modal-card,
+  .modal-content {
+    width: 94% !important;
+    padding: 20px 16px !important;
+    border-radius: 20px !important;
+    max-height: 85vh !important;
+    overflow-y: auto !important;
   }
 }
+
+/* Extra Optimization for Very Small Screens (<= 480px) */
+@media (max-width: 480px) {
+  body {
+    padding: 6px 4px 75px 4px !important;
+  }
+
+  .info-section-card,
+  .plain-section {
+    padding: 22px 14px !important;
+    border-radius: 16px !important;
+  }
+
+  .mesh-hero-headline {
+    font-size: 25px !important;
+  }
+
+  .info-title,
+  .mesh-main-headline {
+    font-size: 21px !important;
+  }
+
+  .bento-card,
+  .stat-card,
+  .price-card,
+  .vertical-step-card,
+  .portfolio-item-card {
+    padding: 16px 14px !important;
+  }
+}
+
+
+
